@@ -83,6 +83,7 @@ header .logos {
     height: 100%;
     display: flex;
     align-items: center;
+    flex-basis: 350px;
 }
 
 header .main-logo {
@@ -148,6 +149,19 @@ header .down.active {
     gap: 10px;
 }
 
+header .mobile-icon {
+    display: none;
+    color: #fff;
+    font-size: 30px;
+}
+
+header .navigation {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 header nav ul {
     display: flex;
     align-items: center;
@@ -179,6 +193,10 @@ header .dropdown-menu {
     -moz-border-radius: 8px;
     -ms-border-radius: 8px;
     -o-border-radius: 8px;
+}
+
+header .fa-xmark {
+    display: none;
 }
 
 header .dropdown-menu li {
@@ -222,6 +240,71 @@ header .right .dropdown-menu li:hover {
     background-color: #2a2a2a;
 }
 
+@media (max-width: 768px) {
+    header .container {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    header .logos {
+        width: fit-content;
+    }
+
+    header .mobile-icon {
+        display: block;
+    }
+
+    header .fa-xmark {
+        display: block;
+        font-size: 20px;
+        color: #fff;
+        position: absolute;
+        top: 50px;
+        right: 50px;
+    }
+
+    header .navigation {
+        display: none;
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: var(--bg-color);
+        flex-direction: column;
+        justify-content: center;
+        gap: 50px;
+    }
+
+    header .navigation.active {
+        display: flex;
+    }
+
+    header .navigation ul {
+        flex-direction: column;
+    }
+
+    header .main-menu .dropdown-menu {
+        display: none;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        justify-content: center;
+    }
+
+    header .main-menu .dropdown-menu.active {
+        display: flex;
+    }
+
+    header .btn {
+        position: relative;
+        z-index: 20;
+    }
+}
+
 /*==================
 == Header Section
 ==================*/
@@ -261,7 +344,6 @@ header .right .dropdown-menu li:hover {
 
 .banner .data {
     display: flex;
-    align-items: center;
     gap: 50px;
     margin-top: 100px;
 }
@@ -292,6 +374,39 @@ header .right .dropdown-menu li:hover {
     font-size: 13px;
     font-weight: 700;
     text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .banner {
+        height: 100vh;
+        background-size: cover;
+    }
+
+    .banner .container {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .banner h1 {
+        font-size: 35px;
+    }
+
+    .banner .data {
+        margin-top: 260px;
+        flex-wrap: wrap;
+    }
+
+    .banner .value {
+        font-size: 20px;
+    }
+
+    .banner .value i {
+        display: none;
+    }
+
+    .banner .key {
+        font-size: 11px;
+    }
 }
 
 /*==================
@@ -356,6 +471,18 @@ header .right .dropdown-menu li:hover {
     padding: 0px 10% 0px 12%;
 }
 
+@media (max-width: 768px) {
+    .services .container {
+        width: 100%;
+        padding: 0 20px;
+    }
+    .services .box,
+    .services .box:nth-child(2) {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
 /*==================
 == Services Section
 ==================*/
@@ -369,6 +496,7 @@ header .right .dropdown-menu li:hover {
     padding: 60px 0px 90px;
     background: var(--bg-color);
     text-align: center;
+    overflow: hidden;
 }
 
 .how-it-works .container {
@@ -379,6 +507,7 @@ header .right .dropdown-menu li:hover {
 .how-it-works .stars-bot {
     position: absolute;
     width: 300px;
+    z-index: 1;
 }
 
 .how-it-works .stars-top {
@@ -395,6 +524,8 @@ header .right .dropdown-menu li:hover {
     font-size: 38px;
     color: #fff;
     font-weight: 700;
+    position: relative;
+    z-index: 5;
 }
 
 .how-it-works .btns {
@@ -403,6 +534,8 @@ header .right .dropdown-menu li:hover {
     justify-content: center;
     align-items: center;
     gap: 30px;
+    position: relative;
+    z-index: 6;
 }
 
 .how-it-works .btns .btn {
@@ -424,6 +557,8 @@ header .right .dropdown-menu li:hover {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 30px;
+    position: relative;
+    z-index: 7;
 }
 
 .how-it-works .steps .step {
@@ -468,6 +603,14 @@ header .right .dropdown-menu li:hover {
     -o-transform: translateX(-50%);
 }
 
+@media (max-width: 768px) {
+    .how-it-works .stars-top,
+    .how-it-works .stars-bot {
+        position: absolute;
+        width: 100px;
+    }
+}
+
 /*======================
 == How it Works Section
 ======================*/
@@ -497,11 +640,12 @@ header .right .dropdown-menu li:hover {
 }
 
 .audits .box img {
-    width: 300px;
+    max-width: 300px;
+    width: 100%;
 }
 
 .audits .box p {
-    width: 377px;
+    max-width: 377px;
     font-weight: 500;
     color: var(--title);
     margin-bottom: 20px;
@@ -628,6 +772,20 @@ header .right .dropdown-menu li:hover {
     font-size: 25px;
 }
 
+@media (max-width: 768px) {
+    .audits .box {
+        flex-direction: column;
+    }
+
+    .audits .boost {
+        width: 100%;
+    }
+
+    .audits .social {
+        flex-direction: column;
+    }
+}
+
 /*======================
 == Audits Section
 ======================*/
@@ -651,6 +809,7 @@ header .right .dropdown-menu li:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 40px;
 }
 
 .footer .logos img {
@@ -681,6 +840,12 @@ header .right .dropdown-menu li:hover {
 
 .footer .box a:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .footer .container {
+        flex-direction: column;
+    }
 }
 
 /*======================
