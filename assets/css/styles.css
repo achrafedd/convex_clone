@@ -1,0 +1,688 @@
+:root {
+    --bg-color: #202020;
+    --bg-section: #eeeeee;
+    --main-color: #1682fe;
+    --btn-hover: #0f5bb1;
+    --small-text: #828282;
+    --paragraph: #5e5e5e;
+    --title: #3a3a3a;
+    --dark-hover: #282828;
+    --footer-bg: #e5e5e5;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body,
+input,
+a,
+select,
+textarea {
+    font-family: "DM Sans", sans-serif;
+    line-height: 1.3;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: var(--main-color);
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    width: fit-content;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.btn:hover {
+    background: var(--btn-hover);
+}
+
+.container {
+    margin: 0 auto;
+}
+
+/*==================
+== Header Section
+==================*/
+
+header {
+    background-color: transparent;
+    height: 80px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+header .container {
+    position: relative;
+    display: flex;
+    width: 888px;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logos {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+header .main-logo {
+    display: block;
+    height: 25px;
+}
+
+header .main-logo img {
+    height: 25px;
+    padding-right: 18px;
+}
+
+header .curve-logo {
+    margin-left: 12px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+header .curve-logo img {
+    height: 33px;
+    padding: 3px 6px;
+    cursor: pointer;
+}
+
+header .curve-logo::before {
+    content: "";
+    position: absolute;
+    margin-left: -12px;
+    width: 1px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+header .curve-logo i {
+    color: #fff;
+}
+
+header .down {
+    display: none;
+    position: absolute;
+    top: 120%;
+    left: 0;
+    background-color: var(--bg-color);
+    color: #fff;
+    padding: 8px 15px;
+    font: 18px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+header .down img {
+    width: 50px;
+    height: 45px;
+}
+
+header .down.active {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header nav ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+header nav .link {
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+header nav li:has(.dd-btn) {
+    position: relative;
+}
+
+header .dropdown-menu {
+    display: none;
+    flex-direction: column;
+    background: var(--bg-color);
+    padding: 8px;
+    position: absolute;
+    width: 230px;
+    top: 150%;
+    left: 0;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+header .dropdown-menu li {
+    padding: 8px 4px;
+}
+
+header .dropdown-menu.active {
+    display: block;
+}
+
+header .divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+header .right {
+    position: relative;
+}
+
+header .right .dropdown-menu {
+    width: 100%;
+    left: 0;
+}
+
+header .right .dropdown-menu li {
+    color: #fff;
+    background-color: #3a3a3a;
+    font-size: 15px;
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+header .right .dropdown-menu li:hover {
+    background-color: #2a2a2a;
+}
+
+/*==================
+== Header Section
+==================*/
+
+/*==================
+== Banner Section
+==================*/
+
+.banner {
+    height: 500px;
+    width: 100%;
+    background: url(../images/bg.svg) no-repeat center center;
+    background-size: 100% 500px;
+    padding-top: 85px;
+}
+
+.banner .container {
+    width: 888px;
+    color: #fff;
+}
+
+.banner h1 {
+    font-size: 47px;
+    line-height: 45px;
+}
+
+.banner p {
+    margin: 1.2em 0px 0px;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.banner .btn {
+    margin-top: 30px;
+    padding: 10px 60px;
+}
+
+.banner .data {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-top: 100px;
+}
+
+.banner .value {
+    margin-bottom: 6px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.banner .value i {
+    font-size: 20px;
+    cursor: pointer;
+    padding: 3px;
+    border: 2px dashed transparent;
+}
+
+.banner .value i:hover {
+    border-color: #fff;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.banner .key {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/*==================
+== Banner Section
+==================*/
+
+/*==================
+== Services Section
+==================*/
+
+.services {
+    background-color: var(--bg-section);
+    padding: 20px 0;
+}
+
+.services .container {
+    width: 888px;
+}
+
+.services .box {
+    margin: 52px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.services .box:nth-of-type(2) {
+    flex-direction: row-reverse;
+}
+
+.services .box .content {
+    flex-basis: 45%;
+}
+
+.services .box span {
+    font-size: 13px;
+    text-transform: uppercase;
+    opacity: 0.6;
+    font-weight: 700;
+    margin: 10px 0;
+    color: var(--small-text);
+}
+
+.services .box h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 10px 0;
+    color: var(--title);
+}
+
+.services .box p {
+    font-size: 17px;
+    opacity: 0.8;
+    font-weight: 500;
+    margin: 10px 0;
+    color: var(--paragraph);
+}
+
+.services .box .image img {
+    width: 242px;
+    padding: 0px 10% 0px 12%;
+}
+
+/*==================
+== Services Section
+==================*/
+
+/*======================
+== How it Works Section
+======================*/
+
+.how-it-works {
+    position: relative;
+    padding: 60px 0px 90px;
+    background: var(--bg-color);
+    text-align: center;
+}
+
+.how-it-works .container {
+    padding: 0 30px;
+}
+
+.how-it-works .stars-top,
+.how-it-works .stars-bot {
+    position: absolute;
+    width: 300px;
+}
+
+.how-it-works .stars-top {
+    right: 50px;
+    top: 50px;
+}
+
+.how-it-works .stars-bot {
+    left: 50px;
+    bottom: 0;
+}
+
+.how-it-works h2 {
+    font-size: 38px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.how-it-works .btns {
+    margin: 52px 0px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.how-it-works .btns .btn {
+    background-color: transparent;
+    border: 1px solid #fff;
+    opacity: 0.8;
+    font-weight: 400;
+}
+
+.how-it-works .btns .btn:hover {
+    background: none;
+}
+
+.how-it-works .btns .btn.active {
+    opacity: 1;
+}
+
+.how-it-works .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.how-it-works .steps .step {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    position: relative;
+}
+
+.how-it-works .step span {
+    display: block;
+    text-align: left;
+    color: var(--small-text);
+}
+
+.how-it-works .step img {
+    width: 100px;
+    margin: 20px 0;
+}
+
+.how-it-works .step p {
+    text-align: left;
+    font-weight: 700;
+    color: var(--title);
+}
+
+.how-it-works .step .btn {
+    position: absolute;
+    bottom: -8%;
+    left: 50%;
+    z-index: 100;
+    padding: 10px 50px;
+    white-space: nowrap;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+/*======================
+== How it Works Section
+======================*/
+
+/*======================
+== Audits Section
+======================*/
+
+.audits {
+    background-color: var(--bg-section);
+    padding: 60px 0;
+}
+
+.audits .container {
+    padding: 30px;
+}
+
+.audits h3 {
+    color: var(--title);
+    margin: 18px 0;
+}
+
+.audits .box {
+    display: flex;
+    align-items: start;
+    gap: 50px;
+}
+
+.audits .box img {
+    width: 300px;
+}
+
+.audits .box p {
+    width: 377px;
+    font-weight: 500;
+    color: var(--title);
+    margin-bottom: 20px;
+}
+
+.audits .box a {
+    color: var(--main-color);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.audits .box a:hover {
+    text-decoration: underline;
+}
+
+.audits .boost {
+    width: 500px;
+    height: 180px;
+    background-color: var(--main-color);
+    position: relative;
+    margin: 120px auto;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.audits .boost .images {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.audits .boost .stars-top,
+.audits .boost .stars-bot {
+    position: absolute;
+    width: 200px;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.audits .boost .stars-top {
+    top: -80px;
+    right: -80px;
+}
+
+.audits .boost .stars-bot {
+    bottom: -80px;
+    left: -80px;
+}
+
+.audits .boost p {
+    padding-top: 50px;
+    font-size: 32px;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    z-index: 5;
+    position: relative;
+}
+
+.audits .boost .btn {
+    background-color: var(--title);
+    position: absolute;
+    padding: 10px 80px;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+.audits .boost .btn:hover {
+    background-color: var(--dark-hover);
+}
+
+.audits .social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.audits .social .box {
+    background-color: var(--title);
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.audits .social .text {
+    align-self: flex-end;
+    font-weight: 700;
+}
+
+.audits .social .icon {
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    color: var(--title);
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.audits .social .icon i {
+    font-size: 25px;
+}
+
+/*======================
+== Audits Section
+======================*/
+
+/*======================
+== Footer Section
+======================*/
+
+.footer {
+    background-color: var(--footer-bg);
+    padding: 50px 0;
+}
+
+.footer .container {
+    display: flex;
+    gap: 50px;
+    padding: 0 30px;
+}
+
+.footer .logos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer .logos img {
+    width: 150px;
+}
+
+.footer .logos img:last-child {
+    border: 1px solid var(--small-text);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.footer .box h4 {
+    color: var(--title);
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.footer .box a {
+    color: var(--title);
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.footer .box a:hover {
+    text-decoration: underline;
+}
+
+/*======================
+== Footer Section
+======================*/
